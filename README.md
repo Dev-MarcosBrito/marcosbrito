@@ -45,9 +45,13 @@ Criação de Interfaces Humanizadas e Interativas
 💬 Principais Recursos
 
 ✅ Site moderno, rápido e responsivo
+
 🤖 Agente de IA integrado para interação com visitantes
+
 💬 Captação de leads automatizada
+
 🎯 Foco em usabilidade e conversão
+
 📈 Design orientado à experiência do usuário
 
 💡 Insight
