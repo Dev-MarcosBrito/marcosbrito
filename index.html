@@ -1,385 +1,415 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-br" class="no-js">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcos Brito | Desenvolvedor e Especialista em IA</title>
     
-    <!-- Metatags para SEO -->
-    <meta name="description" content="Desenvolvedor e Especialista em IA criando experiências digitais que automatizam processos, aumentam conversões e encantam clientes.">
-    <meta name="keywords" content="Marcos Brito, Desenvolvedor, Especialista em IA, Inteligência Artificial, Desenvolvimento Web, Portfólio, Sites Profissionais, Agentes de IA, Automação">
+    <!-- Meta Tags Essenciais -->
+    <meta name="description" content="Portfólio de Marcos Brito — Desenvolvedor Front-end especializado em React.js, React Native, Node.js, TypeScript e Tailwind CSS">
+    <meta name="keywords" content="desenvolvedor front-end, React, TypeScript, portfólio, web developer, JavaScript">
     <meta name="author" content="Marcos Brito">
-    <meta property="og:title" content="Marcos Brito | Desenvolvedor e Especialista em IA" />
-    <meta property="og:description" content="Transformo Ideias em Soluções Inteligentes que Conectam Pessoas e Tecnologia." />
-    <meta property="og:image" content="https://placehold.co/1200x630/0a192f/64ffda?text=Marcos+Brito" />
-    <meta property="og:url" content="URL_DO_SEU_SITE_AQUI" />
-    <meta name="twitter:card" content="summary_large_image" />
-
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#4f46e5">
+    <meta name="color-scheme" content="dark">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marcosbrito.dev/">
+    <meta property="og:title" content="Marcos Brito | Portfólio — Desenvolvedor Front-end">
+    <meta property="og:description" content="Portfólio de Marcos Brito — Desenvolvedor Front-end especializado em React.js, React Native, Node.js, TypeScript e Tailwind CSS">
+    <meta property="og:image" content="https://marcosbrito.dev/assets/images/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://marcosbrito.dev/">
+    <meta name="twitter:title" content="Marcos Brito | Portfólio — Desenvolvedor Front-end">
+    <meta name="twitter:description" content="Portfólio de Marcos Brito — Desenvolvedor Front-end especializado em React.js, React Native, Node.js, TypeScript e Tailwind CSS">
+    <meta name="twitter:image" content="https://marcosbrito.dev/assets/images/og-image.jpg">
+    
     <!-- Favicon -->
-    <link rel="icon" href="https://placehold.co/32x32/0a192f/64ffda?text=MB" type="image/png">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Google Fonts: Poppins -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Preload de fontes para melhor performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style">
     
-    <!-- Botpress Webchat Scripts -->
-    <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js" defer></script>
-    <script src="https://files.bpcontent.cloud/2025/10/08/17/20251008173926-6GXT5NDH.js" defer></script>
-
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #0a192f;
-            color: #a8b2d1;
-        }
-        .text-accent { color: #64ffda; }
-        .bg-accent { background-color: #64ffda; }
-        .border-accent { border-color: #64ffda; }
-        .bg-navy { background-color: #0a192f; }
-        .bg-light-navy { background-color: #112240; }
-        .text-lightest-slate { color: #ccd6f6; }
-        .text-slate { color: #8892b0; }
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: #ccd6f6;
-            width: 100%;
-            margin-bottom: 2rem;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            flex-grow: 1;
-            height: 1px;
-            background-color: #233554;
-        }
-        .nav-link {
-            position: relative;
-            transition: color 0.3s;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #64ffda;
-            transition: width 0.3s;
-        }
-        .nav-link:hover, .nav-link.active {
-            color: #64ffda;
-        }
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
-        }
-        .animated-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .animated-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
-        }
-        /* Efeito de revelação no scroll */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>Marcos Brito | Portfólio — Desenvolvedor Front-end</title>
 </head>
-<body class="leading-relaxed antialiased">
+
+<body>
+
+    <!-- Skip Link para acessibilidade -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- Indicador de Progresso de Scroll -->
+    <div class="scroll-progress" role="progressbar" aria-label="Progresso de leitura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
 
     <!-- Header -->
-    <header id="header" class="bg-navy/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-md">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold text-accent">MB</a>
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="#sobre" class="nav-link text-lightest-slate">Sobre</a>
-                <a href="#servicos" class="nav-link text-lightest-slate">Serviços</a>
-                <a href="#projetos" class="nav-link text-lightest-slate">Projetos</a>
-                <a href="#contato" class="nav-link text-lightest-slate">Contato</a>
-            </div>
-            <div class="md:hidden">
-                <button id="menu-btn" class="text-accent focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </div>
+    <header id="header" role="banner">
+        <nav class="nav-bar" role="navigation" aria-label="Navegação principal">
+            <ul id="nav-links" role="menubar">
+                <li role="none"><a href="#home" class="link" role="menuitem">Início</a></li>
+                <li role="none"><a href="#about" class="link" role="menuitem">Sobre</a></li>
+                <li role="none"><a href="#skills" class="link" role="menuitem">Habilidades</a></li>
+                <li role="none"><a href="#projects" class="link" role="menuitem">Projetos</a></li>
+                <li role="none"><a href="#contact" class="link" role="menuitem">Contato</a></li>
+            </ul>
+
+            <!-- Botão Contatar -->
+            <a href="#" class="btn btn-default" aria-label="Contatar via WhatsApp">Contatar</a>
         </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden flex-col items-center space-y-4 py-4 bg-light-navy">
-            <a href="#sobre" class="nav-link text-lightest-slate">Sobre</a>
-            <a href="#servicos" class="nav-link text-lightest-slate">Serviços</a>
-            <a href="#projetos" class="nav-link text-lightest-slate">Projetos</a>
-            <a href="#contato" class="nav-link text-lightest-slate">Contato</a>
-        </div>
     </header>
 
-    <main class="container mx-auto px-6 md:px-16 lg:px-24">
-        <!-- Seção Hero -->
-        <section id="hero" class="min-h-screen flex items-center justify-center text-center md:text-left reveal">
-            <div>
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-lightest-slate mt-4">Transformo Ideias em Soluções Inteligentes.</h1>
-                <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-slate mt-2">Conecto Pessoas e Tecnologia.</h2>
-                <p class="mt-6 max-w-xl mx-auto md:mx-0 text-slate">
-                    Desenvolvedor e Especialista em IA | Criando experiências digitais que automatizam processos, aumentam conversões e encantam clientes.
+    <!-- Main -->
+    <main id="main-content" role="main">
+        <!-- Home -->
+        <section id="home" class="home" aria-labelledby="home-title">
+            <img src="src/assets/about/proffile.jpg" 
+                 alt="Foto de perfil de Marcos Brito, Desenvolvedor Front-end" 
+                 class="profile-img"
+                 loading="eager"
+                 width="350"
+                 height="350">
+            <h1 id="home-title">Marcos Brito</h1>
+            <p class="subtitle">Desenvolvedor Front-end</p>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="about fade-in-section" aria-labelledby="about-title">
+            <h2 id="about-title" class="about-title">Sobre mim</h2>
+
+            <div class="about-content">
+                <p class="about-text">
+                    Sou Desenvolvedor Front-end Júnior com foco em <strong>React.js, React Native, Node.js, TypeScript e Tailwind CSS.</strong>
+                    <br>
+                    Tenho paixão por criar interfaces modernas, responsivas e funcionais, sempre buscando unir performance, usabilidade e boas práticas de código.
+                    <br>
+                    Atualmente, dedico meu tempo ao aperfeiçoamento constante das minhas habilidades e à criação de projetos que reflitam meu crescimento como desenvolvedor.
+                    Meu objetivo é contribuir em equipes que valorizem tecnologia, aprendizado contínuo e colaboração, desenvolvendo soluções que realmente façam a diferença.
                 </p>
-                <a href="#contato" class="inline-block mt-8 px-8 py-4 border border-accent rounded-md text-accent text-lg font-medium hover:bg-accent/10 transition-colors duration-300">
-                    Vamos Conversar sobre seu Projeto →
-                </a>
             </div>
         </section>
 
-        <!-- Seção Sobre -->
-        <section id="sobre" class="py-24 reveal">
-            <h2 class="section-title"><span class="text-accent mr-2">01.</span>Sobre Mim</h2>
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
-                <div class="md:col-span-3 text-slate">
-                    <p class="mb-4">Prazer, sou Marcos Brito.</p>
-                    <p class="mb-4">Tenho 23 anos, nasci e cresci em Altamira, no coração do Pará, e escolhi a tecnologia como ferramenta para transformar negócios e conectar pessoas de forma mais inteligente.</p>
-                    <p class="mb-4">Como Desenvolvedor e Especialista em Inteligência Artificial, minha missão vai além de escrever código ou treinar modelos: eu construo pontes entre o potencial da IA e as necessidades reais de quem empreende, atende clientes e busca se destacar no digital.</p>
-                    <p class="mb-4">Sou formado em Gestão de Inteligência Artificial e Engenharia de Prompt pelo IA Club, e em Desenvolvimento Front-End pela Comunidade Dev Completo. Mas o que realmente me move é ver uma ideia ganhar vida na tela — e gerar resultados concretos para quem confia no meu trabalho.</p>
-                    <p>Trabalho com quem acredita que tecnologia deve ser funcional, acessível e surpreendente. Se você busca inovação sem complicação, está no lugar certo.</p>
+        <!-- Skills -->
+        <section id="skills" class="skills fade-in-section" aria-labelledby="skills-title">
+            <h2 id="skills-title" class="skills-title">Habilidades</h2>
+
+            <div class="skills-content">
+                <div class="skills-card" role="list" aria-label="Tecnologias e ferramentas">
+                    <img src="src/assets/skills/html.png" 
+                         alt="Logo HTML5" 
+                         class="skills-img"
+                         loading="lazy"
+                         width="80"
+                         height="80"
+                         role="listitem">
+                    <img src="src/assets/skills/css-3.png" 
+                         alt="Logo CSS3" 
+                         class="skills-img"
+                         loading="lazy"
+                         width="80"
+                         height="80"
+                         role="listitem">
+                    <img src="src/assets/skills/js.png" 
+                         alt="Logo JavaScript" 
+                         class="skills-img"
+                         loading="lazy"
+                         width="80"
+                         height="80"
+                         role="listitem">
+                    <img src="src/assets/skills/TypeScript.png" 
+                         alt="Logo TypeScript" 
+                         class="skills-img"
+                         loading="lazy"
+                         width="80"
+                         height="80"
+                         role="listitem">
+                    <img src="src/assets/skills/react.png" 
+                         alt="Logo React" 
+                         class="skills-img"
+                         loading="lazy"
+                         width="80"
+                         height="80"
+                         role="listitem">
+                    <img src="src/assets/skills/Tailwind CSS.png" 
+                         alt="Logo Tailwind CSS" 
+                         class="skills-img"
+                         loading="lazy"
+                         width="80"
+                         height="80"
+                         role="listitem">
+                    <img src="src/assets/skills/Node.js.png" 
+                         alt="Logo Node.js" 
+                         class="skills-img"
+                         loading="lazy"
+                         width="80"
+                         height="80"
+                         role="listitem">
+                    <img src="src/assets/skills/Git.png" 
+                         alt="Logo Git" 
+                         class="skills-img"
+                         loading="lazy"
+                         width="80"
+                         height="80"
+                         role="listitem">
                 </div>
-                <div class="md:col-span-2 flex items-center justify-center">
-                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-accent relative group">
-                        <img src="img/proffile.jpg" alt="Marcos Brito" class="w-full h-full object-cover transition-all duration-300">
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="projects fade-in-section" aria-labelledby="projects-title">
+            <h2 id="projects-title" class="projects-title">Meus Projetos</h2>
+
+            <div class="projects-content" role="region" aria-label="Carrossel de projetos">
+                <article class="projects-card" role="article" aria-labelledby="project-1">
+                    <img src="src/assets/projects/advocaIA.png" 
+                         alt="Captura de tela do projeto AdvocaIA" 
+                         class="projects-img"
+                         loading="lazy"
+                         width="400"
+                         height="200">
+                    <div class="projects-card-content">
+                        <h3 id="project-1" class="title-img">
+                            <a href="https://dev-marcosbrito.github.io/advocaia-site/" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Abrir projeto AdvocaIA em nova aba">
+                                AdvocaIA
+                            </a>
+                        </h3>
+                        <p class="projects-text">
+                            Projeto que explora IA Generativa no desenvolvimento web. Desenvolvido com HTML, CSS e JavaScript, integrando engenharia de prompt e automação de conteúdo.
+                        </p>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Seção Missão e Propósito -->
-        <section id="missao" class="py-24 grid grid-cols-1 md:grid-cols-2 gap-12 reveal">
-            <div class="bg-light-navy p-8 rounded-lg animated-card">
-                <h3 class="text-2xl font-bold text-lightest-slate mb-4">Minha Missão</h3>
-                <p class="text-slate">Ajudar negócios e profissionais a se destacarem no ambiente digital por meio de soluções inteligentes, automação estratégica e design funcional, criando experiências que geram impacto real.</p>
-            </div>
-            <div class="bg-light-navy p-8 rounded-lg animated-card">
-                <h3 class="text-2xl font-bold text-lightest-slate mb-4">Meu Propósito</h3>
-                <p class="text-slate">Simplificar o atendimento, aumentar conversões e melhorar a experiência do cliente — usando a Inteligência Artificial como aliada. Acredito que a tecnologia deve potencializar pessoas, não distanciá-las. Eu crio ferramentas que trabalham por você, enquanto você foca no que realmente importa: crescer.</p>
-            </div>
-        </section>
+                </article>
 
-        <!-- Seção Serviços -->
-        <section id="servicos" class="py-24 reveal">
-            <h2 class="section-title"><span class="text-accent mr-2">02.</span>O Que Eu Faço por Você</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Serviço 1 -->
-                <div class="bg-light-navy p-8 rounded-lg animated-card flex flex-col">
-                    <div class="text-accent mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c.238.19.475.385.71.594m.437 11.235a2.25 2.25 0 003.182 0l2.49-2.49a2.25 2.25 0 000-3.182L13.5 8.5M9.75 3.104a2.25 2.25 0 00-3.182 0l-2.49 2.49a2.25 2.25 0 000 3.182L8.25 13.5m.437 1.125a2.25 2.25 0 01-3.182 0l-2.49-2.49a2.25 2.25 0 010-3.182l2.49-2.49a2.25 2.25 0 013.182 0" /></svg>
+                <article class="projects-card" role="article" aria-labelledby="project-2">
+                    <img src="src/assets/projects/apple-store.png" 
+                         alt="Captura de tela do projeto Apple Store" 
+                         class="projects-img"
+                         loading="lazy"
+                         width="400"
+                         height="200">
+                    <div class="projects-card-content">
+                        <h3 id="project-2" class="title-img">
+                            <a href="https://dev-marcosbrito.github.io/Apple-Store/" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Abrir projeto Apple Store em nova aba">
+                                Apple Store
+                            </a>
+                        </h3>
+                        <p class="projects-text">
+                            Landing page inspirada no ecossistema Apple. Inclui carrossel interativo, tema claro/escuro, suporte multilíngue e design responsivo. Desenvolvido com HTML, CSS e JavaScript Vanilla.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold text-lightest-slate mb-3">Criação de Sites Profissionais com IA Embutida</h3>
-                    <p class="text-slate mb-4 flex-grow">Desenvolvo sites responsivos, rápidos e modernos, com assistentes de IA integrados que conversam com seus visitantes, capturam leads e direcionam para a conversão.</p>
-                    <ul class="text-sm text-slate list-disc list-inside">
-                        <li>Profissionais liberais</li>
-                        <li>Pequenas e médias empresas</li>
-                        <li>Landing pages que convertem</li>
-                    </ul>
-                </div>
-                <!-- Serviço 2 -->
-                <div class="bg-light-navy p-8 rounded-lg animated-card flex flex-col">
-                    <div class="text-accent mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" /></svg>
+                </article>
+
+                <article class="projects-card" role="article" aria-labelledby="project-3">
+                    <img src="src/assets/projects/coca-cola.png" 
+                         alt="Captura de tela do projeto Coca-Cola" 
+                         class="projects-img"
+                         loading="lazy"
+                         width="400"
+                         height="200">
+                    <div class="projects-card-content">
+                        <h3 id="project-3" class="title-img">
+                            <a href="https://dev-marcosbrito.github.io/coca-cola/" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Abrir projeto Coca-Cola em nova aba">
+                                Coca-Cola
+                            </a>
+                        </h3>
+                        <p class="projects-text">
+                            Landing page animada com GSAP + ScrollTrigger. Experiência visual imersiva com animações baseadas em scroll e design vibrante.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold text-lightest-slate mb-3">Criação de Agentes de IA para Sites e WhatsApp</h3>
-                    <p class="text-slate mb-4 flex-grow">Atendimento 24/7, qualificação de leads e agendamento automático. Crio agentes inteligentes que representam sua marca com eficiência e humanização.</p>
-                    <ul class="text-sm text-slate list-disc list-inside">
-                        <li>E-commerces e negócios locais</li>
-                        <li>Consultores e prestadores de serviço</li>
-                        <li>Empresas que querem escalar</li>
-                    </ul>
-                </div>
-                <!-- Serviço 3 -->
-                <div class="bg-light-navy p-8 rounded-lg animated-card flex flex-col">
-                    <div class="text-accent mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>
+                </article>
+
+                <article class="projects-card" role="article" aria-labelledby="project-4">
+                    <img src="src/assets/projects/iphone-17.png" 
+                         alt="Captura de tela do projeto iPhone 17 Pro" 
+                         class="projects-img"
+                         loading="lazy"
+                         width="400"
+                         height="200">
+                    <div class="projects-card-content">
+                        <h3 id="project-4" class="title-img">
+                            <a href="https://dev-marcosbrito.github.io/site-iPhone17/" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Abrir projeto iPhone 17 Pro em nova aba">
+                                iPhone 17 Pro
+                            </a>
+                        </h3>
+                        <p class="projects-text">
+                            Landing page desenvolvida com React.js, Vite e Tailwind CSS. Explora componentização, animações leves e design inspirado na Apple.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold text-lightest-slate mb-3">Criação de Agentes de IA Avançados (com n8n)</h3>
-                    <p class="text-slate mb-4 flex-grow">Automação sob medida com agentes de IA avançados integrados a CRM, Google Sheets, Notion e mais. Fluxos que economizam tempo e potencializam resultados.</p>
-                    <ul class="text-sm text-slate list-disc list-inside">
-                        <li>Empresas com grande volume de dados</li>
-                        <li>Equipes que buscam otimização</li>
-                        <li>Negócios que buscam inovação</li>
-                    </ul>
-                </div>
+                </article>
+
+                <article class="projects-card" role="article" aria-labelledby="project-5">
+                    <img src="src/assets/projects/la-bella-vita.png" 
+                         alt="Captura de tela do projeto La Bella Vita" 
+                         class="projects-img"
+                         loading="lazy"
+                         width="400"
+                         height="200">
+                    <div class="projects-card-content">
+                        <h3 id="project-5" class="title-img">
+                            <a href="https://dev-marcosbrito.github.io/la-bella-vita/" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Abrir projeto La Bella Vita em nova aba">
+                                La Bella Vita
+                            </a>
+                        </h3>
+                        <p class="projects-text">
+                            Site inspirado na cultura gastronômica italiana. Desenvolvido com HTML, CSS e JavaScript, utilizando IAs generativas para criação de conteúdo e identidade visual.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="projects-card" role="article" aria-labelledby="project-6">
+                    <img src="src/assets/projects/starbucks.png" 
+                         alt="Captura de tela do projeto Starbucks" 
+                         class="projects-img"
+                         loading="lazy"
+                         width="400"
+                         height="200">
+                    <div class="projects-card-content">
+                        <h3 id="project-6" class="title-img">
+                            <a href="https://dev-marcosbrito.github.io/Starbucks/" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Abrir projeto Starbucks em nova aba">
+                                Starbucks
+                            </a>
+                        </h3>
+                        <p class="projects-text">
+                            Landing page inspirada na marca Starbucks. Design moderno e responsivo com animações sutis, menu interativo e conceito mobile first.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="projects-card" role="article" aria-labelledby="project-7">
+                    <img src="src/assets/projects/the-coffe-house.png" 
+                         alt="Captura de tela do projeto The Coffee House" 
+                         class="projects-img"
+                         loading="lazy"
+                         width="400"
+                         height="200">
+                    <div class="projects-card-content">
+                        <h3 id="project-7" class="title-img">
+                            <a href="https://dev-marcosbrito.github.io/The-Coffee-House/" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Abrir projeto The Coffee House em nova aba">
+                                The Coffee House
+                            </a>
+                        </h3>
+                        <p class="projects-text">
+                            Landing page imersiva para cafeteria fictícia. Inclui tema claro/escuro, suporte multilíngue e vídeo de fundo para experiência envolvente.
+                        </p>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <!-- Seção Projetos -->
-        <section id="projetos" class="py-24 reveal">
-            <h2 class="section-title"><span class="text-accent mr-2">03.</span>Projetos que Geraram Resultados</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Projeto 1 -->
-                <div class="bg-light-navy p-8 rounded-lg animated-card flex flex-col">
-                    <h3 class="text-xl font-bold text-lightest-slate mb-3">Sistema de Atendimento Inteligente para E-commerce</h3>
-                    <p class="text-slate mb-4 flex-grow"><span class="text-accent font-semibold">Desafio:</span> Escalar o atendimento sem aumentar a equipe, mantendo qualidade e agilidade.</p>
-                    <p class="text-slate mb-4 flex-grow"><span class="text-accent font-semibold">Solução:</span> Agente de IA no WhatsApp para responder dúvidas, verificar pedidos e processar trocas.</p>
-                    <p class="text-slate mb-4 flex-grow"><span class="text-accent font-semibold">Resultado:</span> Redução de 70% no tempo de resposta e aumento de 45% na satisfação do cliente.</p>
-                    <p class="text-xs text-slate/70 font-mono">Python, OpenAI API, WhatsApp Business API, n8n</p>
-                </div>
-                <!-- Projeto 2 -->
-                <div class="bg-light-navy p-8 rounded-lg animated-card flex flex-col">
-                    <h3 class="text-xl font-bold text-lightest-slate mb-3">Site Profissional com Assistente Virtual</h3>
-                    <p class="text-slate mb-4 flex-grow"><span class="text-accent font-semibold">Desafio:</span> Consultora precisava de presença digital forte e qualificação de leads automática.</p>
-                    <p class="text-slate mb-4 flex-grow"><span class="text-accent font-semibold">Solução:</span> Site responsivo com assistente de IA para interagir, qualificar leads e agendar consultorias.</p>
-                    <p class="text-slate mb-4 flex-grow"><span class="text-accent font-semibold">Resultado:</span> 3x mais agendamentos e 80% dos leads pré-qualificados automaticamente.</p>
-                    <p class="text-xs text-slate/70 font-mono">HTML5, CSS3, JavaScript, Claude AI, Integration API</p>
-                </div>
-                <!-- Projeto 3 -->
-                <div class="bg-light-navy p-8 rounded-lg animated-card flex flex-col">
-                    <h3 class="text-xl font-bold text-lightest-slate mb-3">Automação de Processos Internos</h3>
-                    <p class="text-slate mb-4 flex-grow"><span class="text-accent font-semibold">Desafio:</span> Empresa perdia horas com trabalho manual, gerando erros e retrabalho.</p>
-                    <p class="text-slate mb-4 flex-grow"><span class="text-accent font-semibold">Solução:</span> Fluxo automatizado com n8n que integra CRM, Google Sheets, e-mail e WhatsApp.</p>
-                    <p class="text-slate mb-4 flex-grow"><span class="text-accent font-semibold">Resultado:</span> Eliminação de 90% do trabalho manual e economia de 20 horas semanais da equipe.</p>
-                    <p class="text-xs text-slate/70 font-mono">n8n, Google Sheets API, Webhooks, Integração CRM</p>
-                </div>
-                <!-- Projeto 4 -->
-                <div class="bg-light-navy p-8 rounded-lg animated-card flex flex-col">
-                    <h3 class="text-xl font-bold text-lightest-slate mb-3">Landing Page de Alta Conversão</h3>
-                    <p class="text-slate mb-4 flex-grow"><span class="text-accent font-semibold">Desafio:</span> Empreendedor precisava de uma página de vendas otimizada para lançamento de infoproduto.</p>
-                    <p class="text-slate mb-4 flex-grow"><span class="text-accent font-semibold">Solução:</span> Landing page responsiva com design persuasivo, integração de pagamento e chat de IA.</p>
-                    <p class="text-slate mb-4 flex-grow"><span class="text-accent font-semibold">Resultado:</span> Taxa de conversão de 12% e carregamento em menos de 2 segundos.</p>
-                    <p class="text-xs text-slate/70 font-mono">HTML5, CSS3, JavaScript, Design Responsivo, OpenAI API</p>
-                </div>
-            </div>
-             <div class="text-center mt-12">
-                <a href="https://github.com/Dev-MarcosBrito" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 border border-accent rounded-md text-accent text-lg font-medium hover:bg-accent/10 transition-colors duration-300">
-                    Explorar Projetos no GitHub →
-                </a>
-            </div>
-        </section>
+        <!-- Contact -->
+        <section id="contact" class="fade-in-section" aria-labelledby="contact-title">
+            <h2 id="contact-title" class="title-contact">Me envie uma mensagem</h2>
 
-        <!-- Seção Contato -->
-        <section id="contato" class="py-24 text-center reveal">
-            <h2 class="text-accent text-lg">O que vem a seguir?</h2>
-            <h3 class="text-4xl md:text-5xl font-bold text-lightest-slate mt-2">Vamos Construir Algo Incrível Juntos?</h3>
-            <p class="mt-6 max-w-2xl mx-auto text-slate">
-                Se você chegou até aqui, é porque acredita que tecnologia e inteligência artificial podem fazer a diferença no seu negócio. Estou pronto para ouvir sua ideia, entender seu desafio e construir a solução ideal para você.
-            </p>
-            <div class="mt-10 flex flex-wrap justify-center items-center gap-6">
-                 <a href="https://wa.me/5547989298761" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 bg-accent rounded-md text-navy text-lg font-bold hover:bg-opacity-80 transition-all duration-300">
-                    Fale Comigo no WhatsApp
-                </a>
-                 <a href="https://github.com/Dev-MarcosBrito" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 border border-accent rounded-md text-accent text-lg font-medium hover:bg-accent/10 transition-colors duration-300">
-                    Veja Meus Projetos no GitHub
-                </a>
-            </div>
-            
-            <div class="mt-16 flex justify-center space-x-6">
-                <a href="https://wa.me/5547989298761" target="_blank" rel="noopener noreferrer" class="text-slate hover:text-accent transition-colors" aria-label="WhatsApp"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.731 6.086l.001.004l-1.03 3.763l3.8-1.002z"/></svg></a>
-                <a href="https://instagram.com/dev_marcosbrito" target="_blank" rel="noopener noreferrer" class="text-slate hover:text-accent transition-colors" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.25-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.149-3.227 1.664-4.771 4.919-4.919C8.415 2.175 8.796 2.163 12 2.163m0-2.163C8.74 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.74 24 12 24s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.687.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.26 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></a>
-                <a href="mailto:dev.marcos.brito@gmail.com" class="text-slate hover:text-accent transition-colors" aria-label="E-mail"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg></a>
-                <a href="https://linkedin.com/in/marcos-brito-dev" target="_blank" rel="noopener noreferrer" class="text-slate hover:text-accent transition-colors" aria-label="LinkedIn"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                <a href="https://github.com/Dev-MarcosBrito" target="_blank" rel="noopener noreferrer" class="text-slate hover:text-accent transition-colors" aria-label="GitHub"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
-            </div>
+            <form class="form-contact" aria-label="Formulário de contato">
+                <div class="form-group">
+                    <label for="contact-name">Nome</label>
+                    <input type="text" 
+                           id="contact-name" 
+                           class="campo-form" 
+                           placeholder="Seu nome completo"
+                           required
+                           aria-required="true"
+                           minlength="3">
+                </div>
 
+                <div class="form-group">
+                    <label for="contact-message">Mensagem</label>
+                    <textarea id="contact-message" 
+                              class="text-form" 
+                              placeholder="Digite sua mensagem aqui..."
+                              required
+                              aria-required="true"
+                              minlength="10"
+                              rows="6"></textarea>
+                </div>
+
+                <button type="submit" aria-label="Enviar mensagem via WhatsApp">
+                    Enviar via WhatsApp
+                </button>
+            </form>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="py-8 text-center text-slate/70 text-sm">
-        <p>© 2025 Marcos Brito – Desenvolvedor & Especialista em IA</p>
-        <p>Altamira, Pará, Brasil | Transformando ideias em soluções inteligentes</p>
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-social" aria-label="Redes sociais">
+                <a href="https://github.com/dev-marcosbrito" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Visitar perfil no GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/marcosbrito" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Visitar perfil no LinkedIn">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="https://wa.me/+55SEUNUMEROAQUI?text=Olá%20Marcos!" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Contatar via WhatsApp">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <div class="footer-links">
+                <a href="#home">Início</a>
+                <a href="#about">Sobre</a>
+                <a href="#skills">Habilidades</a>
+                <a href="#projects">Projetos</a>
+                <a href="#contact">Contato</a>
+            </div>
+
+            <p class="footer-copyright">
+                &copy; <span id="current-year">2024</span> Marcos Brito. Todos os direitos reservados.
+            </p>
+        </div>
     </footer>
-    
-    <!-- Botão de Voltar ao Topo -->
-    <button id="to-top-btn" class="hidden fixed bottom-5 right-5 bg-accent/20 text-accent p-3 rounded-full hover:bg-accent/40 transition-colors duration-300">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" /></svg>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
 
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const header = document.getElementById('header');
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const toTopBtn = document.getElementById('to-top-btn');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('section[id]');
-
-        // Efeito de sombra no header ao rolar
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('shadow-lg');
-            } else {
-                header.classList.remove('shadow-lg');
-            }
-            
-            // Botão de voltar ao topo
-            if (window.scrollY > 300) {
-                toTopBtn.classList.remove('hidden');
-            } else {
-                toTopBtn.classList.add('hidden');
-            }
-
-            // Ativar link da seção atual
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Menu mobile
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
-        });
-
-        // Fechar menu mobile ao clicar em um link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
-            });
-        });
-
-        // Voltar ao topo
-        toTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Efeito de revelação no scroll
-        const revealElements = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    // Opcional: parar de observar depois de visível
-                    // observer.unobserve(entry.target); 
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-        
-        revealElements.forEach(el => observer.observe(el));
-    });
-</script>
-
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Atualizar ano no copyright
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
-</html>
 
+</html>

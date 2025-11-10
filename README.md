@@ -1,87 +1,218 @@
-Portfólio Marcos Brito — IA, Design e Automação Inteligente
+# Portfólio - Marcos Brito
 
-📘 Sobre o Projeto
+<div align="center">
+  <img src="preview.png" alt="Preview do Portfólio" width="600"/>
+  
+  Portfólio pessoal desenvolvido com **HTML5**, **CSS3** e **JavaScript vanilla**, sem frameworks externos.
+  
+  [🌐 Ver Site ao Vivo](https://dev-marcosbrito.github.io/marcosbrito/) • [📖 Documentação](#-descrição) • [🚀 Como Rodar](#-como-rodar-localmente)
+</div>
 
-Este é o meu site pessoal e portfólio profissional, desenvolvido com o suporte de Inteligência Artificial e projetado para unir design moderno, automação inteligente e interação personalizada.
+---
 
-O grande diferencial do projeto é o agente de IA integrado via Botpress, um assistente conversacional capaz de tirar dúvidas dos visitantes, coletar contatos e direcioná-los à conversão de forma humanizada.
+O projeto foca em semântica, SEO, responsividade, acessibilidade e interações modernas.
 
-Todo o site foi construído a partir de prompts cuidadosamente elaborados, que guiaram a IA na criação do layout, dos textos e até das estratégias de interação.
+## 📋 Descrição
 
----------------------------------------------------
+Site portfólio profissional que apresenta projetos, habilidades e informações de contato do desenvolvedor Marcos Brito. Desenvolvido seguindo as melhores práticas de desenvolvimento web moderno, com foco em performance, acessibilidade e experiência do usuário.
 
-🎯 Objetivo
+## 🎨 Características
 
-Demonstrar na prática como a IA pode ser uma parceira estratégica no desenvolvimento de soluções digitais — unindo estética, automação e funcionalidade para gerar resultados reais.
+- ✅ **HTML5 Semântico** - Estrutura semântica com tags apropriadas
+- ✅ **SEO Otimizado** - Meta tags, Open Graph e Twitter Cards
+- ✅ **Design Responsivo** - Mobile-first com breakpoints em 480px, 768px e 1024px
+- ✅ **Acessibilidade** - ARIA labels, navegação por teclado, contraste adequado
+- ✅ **Menu Mobile** - Menu sempre visível com design elegante em formato de pills
+- ✅ **Menu Ativo** - Destaque automático da seção atual durante o scroll
+- ✅ **Carrossel de Projetos** - Navegação horizontal com scroll e botões
+- ✅ **Botão Voltar ao Topo** - Aparece automaticamente ao rolar a página
+- ✅ **Indicador de Progresso** - Barra de progresso de leitura no topo
+- ✅ **Formulário de Contato** - Validação e integração com WhatsApp
+- ✅ **Animações Suaves** - Fade-in nas seções e efeitos hover respeitando `prefers-reduced-motion`
+- ✅ **Performance** - Lazy loading de imagens, preload de fontes, preconnect e otimizações
+- ✅ **Skip Link** - Link de acessibilidade para pular ao conteúdo principal
 
----------------------------------------------------
+## 📁 Estrutura de Pastas
 
-⚙️ Stack e Ferramentas Utilizadas
+```
+/
+├── index.html              # Página principal
+├── css/
+│   └── style.css          # Estilos principais (inclui variáveis de cores)
+├── js/
+│   └── main.js            # JavaScript com todas as funcionalidades
+├── src/
+│   └── assets/            # Imagens e recursos
+│       ├── about/         # Foto de perfil
+│       ├── projects/      # Screenshots dos projetos
+│       └── skills/        # Logos das tecnologias
+└── README.md              # Este arquivo
+```
 
-HTML5, CSS3, JavaScript — estrutura e comportamento
+## 🌐 Deploy
 
-Botpress — criação e integração do agente de IA
+O site está disponível em: **[🔗 Ver Site ao Vivo](https://dev-marcosbrito.github.io/marcosbrito/)**
 
-IA Generativa (GPT / Claude / Gemini) — geração de conteúdo e design conceitual
+> 💡 **Deploy:** Site hospedado no GitHub Pages
 
-Engenharia de Prompt — direcionamento técnico e criativo das respostas da IA
+## 📸 Preview
 
-Figma — prototipagem visual
+<div align="center">
+  <img src="preview.png" alt="Preview do Portfólio - Marcos Brito" width="800"/>
+  <p><em>Preview do portfólio</em></p>
+</div>
 
-Google Lighthouse / SEO Tools — otimização de desempenho e visibilidade
+> 💡 **Dica:** Adicione uma captura de tela do seu site na raiz do projeto com o nome `preview.png` (recomendado: 1200x800px) para exibir o preview acima. Você pode usar ferramentas como [Screenshot.rocks](https://screenshot.rocks/) ou simplesmente tirar um print da página.
 
----------------------------------------------------
+## 🚀 Como Rodar Localmente
 
-🧩 Competências Demonstradas
+1. **Clone ou baixe o repositório**
+   ```bash
+   git clone <url-do-repositorio>
+   cd marcosbrito
+   ```
 
-Desenvolvimento Front-End Responsivo
+2. **Abra o arquivo `index.html` no navegador**
+   - Você pode usar um servidor local simples:
+   ```bash
+   # Com Python 3
+   python -m http.server 8000
+   
+   # Com Node.js (http-server)
+   npx http-server
+   
+   # Com PHP
+   php -S localhost:8000
+   ```
 
-Engenharia de Prompt Avançada
+3. **Acesse no navegador**
+   - Abra `http://localhost:8000` no seu navegador
 
-Integração de IA em sites reais (Botpress)
+## ⚙️ Configurações
 
-UX Inteligente e Design Focado em Conversão
+### 📱 Editar Número do WhatsApp
 
-Automação Conversacional e Captação de Leads
+Para configurar o número do WhatsApp, você precisa editar em **três lugares**:
 
-Comunicação Técnica e Criativa
+1. **No arquivo `js/main.js`** - Botão "Contatar" (linha ~32):
+   ```javascript
+   const whatsappNumber = '+55SEUNUMEROAQUI'; // Substitua pelo seu número
+   ```
 
-Criação de Interfaces Humanizadas e Interativas
+2. **No arquivo `js/main.js`** - Formulário de contato (linha ~308):
+   ```javascript
+   const whatsappNumber = '+55SEUNUMEROAQUI'; // Substitua pelo seu número
+   ```
 
----------------------------------------------------
+3. **No arquivo `index.html`** - Link no footer (linha ~381):
+   ```html
+   <a href="https://wa.me/+55SEUNUMEROAQUI?text=Olá%20Marcos!" ...>
+   ```
 
-💬 Principais Recursos
+**Formato do número:**
+- Use o formato internacional: `+5511999999999`
+- Sem espaços, parênteses ou hífens
+- Exemplo: `+5511987654321`
 
-✅ Site moderno, rápido e responsivo
+### 🎨 Personalizar Cores
 
-🤖 Agente de IA integrado para interação com visitantes
+As cores estão definidas no arquivo `css/style.css` nas variáveis CSS (linhas 4-11):
 
-💬 Captação de leads automatizada
+```css
+:root {
+    --primary: #4f46e5;      /* Cor primária (azul) */
+    --secondary: #7c3aed;    /* Cor secundária (roxo) */
+    --dark: #0f172a;         /* Fundo escuro */
+    --darker: #0a0f1c;       /* Fundo mais escuro */
+    --light: #e2e8f0;        /* Texto claro */
+    --glass: rgba(255, 255, 255, 0.1); /* Efeito glass */
+}
+```
 
-🎯 Foco em usabilidade e conversão
+## 🛠️ Tecnologias Utilizadas
 
-📈 Design orientado à experiência do usuário
+- **HTML5** - Estrutura semântica
+- **CSS3** - Estilização e animações
+- **JavaScript (Vanilla)** - Funcionalidades interativas
+- **Font Awesome** - Ícones (via CDN)
 
----------------------------------------------------
+## 📱 Funcionalidades
 
-💡 Insight
+### Menu Mobile
+- Menu sempre visível em todas as resoluções
+- Design elegante em formato de "pills" (botões arredondados) no mobile
+- Links com fundo semitransparente e efeitos hover suaves
+- Layout horizontal compacto que se adapta ao tamanho da tela
+- **Menu Ativo**: Destaque automático da seção atual durante o scroll
+- Atributos ARIA para acessibilidade
 
-Este projeto representa o futuro da presença digital: sites que pensam, respondem e convertem — com a ajuda da IA.
+### Carrossel de Projetos
+- Exibe 3 projetos por vez no desktop, 2 no tablet e 1 no mobile
+- Navegação horizontal com scroll suave
+- Botões "Anterior" e "Próximo" que navegam por grupos de projetos
+- Suporte a arrastar (drag) em desktop
+- Suporte a touch/swipe em mobile
+- Imagens dos projetos em formato quadrado pequeno (180px de altura)
+- Descrições concisas e elegantes
+- Fallback para listagem vertical quando JS está desabilitado
 
----------------------------------------------------
+### Formulário de Contato
+- Validação de campos em tempo real
+- Integração com WhatsApp
+- Mensagens de erro/sucesso
+- Labels acessíveis e placeholders descritivos
 
-📎 Status do Projeto
+### Animações
+- **Fade-in nas seções**: Animações de entrada suaves ao entrar na viewport
+- Efeitos hover em cards e botões
+- Transições suaves em todos os elementos interativos
+- Respeita `prefers-reduced-motion` para acessibilidade
 
-✅ Publicado
-🌐 Acesse o site
- https://dev-marcosbrito.github.io/marcosbrito/
+### Navegação e UX
+- **Botão Voltar ao Topo**: Aparece após 300px de scroll com animação suave
+- **Indicador de Progresso**: Barra no topo mostrando o progresso de leitura
+- **Skip Link**: Link de acessibilidade para navegação por teclado
+- Scroll suave entre seções
 
----------------------------------------------------
+## ♿ Acessibilidade
 
-📫 Contato: +55 (47) 9 8929-8761
+O site foi desenvolvido seguindo as diretrizes WCAG 2.1:
 
-👤 Linkedin: https://www.linkedin.com/in/dev-marcos-brito/
+- ✅ Navegação por teclado completa
+- ✅ Skip link para pular ao conteúdo principal
+- ✅ Atributos ARIA apropriados em todos os elementos interativos
+- ✅ Contraste de cores adequado (WCAG AA)
+- ✅ Foco visível em elementos interativos
+- ✅ Textos alternativos descritivos em todas as imagens
+- ✅ Estrutura semântica HTML5
+- ✅ Suporte completo a leitores de tela
+- ✅ Respeita `prefers-reduced-motion` para usuários sensíveis a movimento
+- ✅ Indicadores de progresso com atributos ARIA
 
-📧 E-mail: dev.marcosbrito@gmail.com
+## 🌐 Compatibilidade
 
-📱 Instagram: https://www.instagram.com/dev_marcosbrito/
+Testado e compatível com:
+- ✅ Chrome (últimas versões)
+- ✅ Firefox (últimas versões)
+- ✅ Edge (últimas versões)
+- ✅ Safari (últimas versões)
+- ✅ Navegadores mobile (iOS Safari, Chrome Mobile)
+
+## 📝 Licença
+
+Este projeto é de uso pessoal. Todos os direitos reservados.
+
+## 👤 Autor
+
+**Marcos Brito**
+- GitHub: [@dev-marcosbrito](https://github.com/Dev-MarcosBrito)
+- LinkedIn: [Marcos Brito](https://www.linkedin.com/in/dev-marcos-brito/)
+
+## 📞 Contato
+
+Para entrar em contato, use o formulário no site ou envie uma mensagem via WhatsApp.
+
+---
+
+**Desenvolvido com ❤️ usando HTML5, CSS3 e JavaScript Vanilla**
+
