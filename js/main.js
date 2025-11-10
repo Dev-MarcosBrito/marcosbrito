@@ -21,23 +21,8 @@ document.documentElement.classList.add('js-enabled');
 })();
 
 // ============================================
-// BOTÃO CONTATAR (WhatsApp)
+// BOTÃO CONTATAR (WhatsApp) - Removido do header, agora está no footer e formulário
 // ============================================
-(function initContactButton() {
-    const contactBtn = document.querySelector('.btn-default');
-    
-    if (!contactBtn) return;
-
-    // Substituir +55SEUNUMEROAQUI pelo número real quando disponível
-    const whatsappNumber = '+55SEUNUMEROAQUI';
-    const whatsappMessage = encodeURIComponent('Olá Marcos!');
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-
-    contactBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-    });
-})();
 
 // ============================================
 // CARROSSEL DE PROJETOS
