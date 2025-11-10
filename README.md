@@ -1,7 +1,7 @@
 # Portfólio - Marcos Brito
 
 <div align="center">
-  <img src="preview.png" alt="Preview do Portfólio" width="600"/>
+  
   
   Portfólio pessoal desenvolvido com **HTML5**, **CSS3** e **JavaScript vanilla**, sem frameworks externos.
   
@@ -54,15 +54,6 @@ Site portfólio profissional que apresenta projetos, habilidades e informações
 O site está disponível em: **[🔗 Ver Site ao Vivo](https://dev-marcosbrito.github.io/marcosbrito/)**
 
 > 💡 **Deploy:** Site hospedado no GitHub Pages
-
-## 📸 Preview
-
-<div align="center">
-  <img src="preview.png" alt="Preview do Portfólio - Marcos Brito" width="800"/>
-  <p><em>Preview do portfólio</em></p>
-</div>
-
-> 💡 **Dica:** Adicione uma captura de tela do seu site na raiz do projeto com o nome `preview.png` (recomendado: 1200x800px) para exibir o preview acima. Você pode usar ferramentas como [Screenshot.rocks](https://screenshot.rocks/) ou simplesmente tirar um print da página.
 
 ## 🚀 Como Rodar Localmente
 
