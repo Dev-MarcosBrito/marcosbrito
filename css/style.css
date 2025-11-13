@@ -441,7 +441,7 @@ h1 {
 }
 
 .projects-card-content {
-    padding: 1.5rem;
+    padding: 1.75rem; /* aumentado levemente para comportar descrições mais longas */
 }
 
 .title-img {
@@ -464,7 +464,7 @@ h1 {
 
 .projects-text {
     color: var(--light);
-    line-height: 1.6;
+    line-height: 1.65;
     margin-top: 1rem;
 }
 
@@ -856,4 +856,3 @@ footer {
         font-size: 1rem;
     }
 }
-

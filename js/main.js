@@ -21,10 +21,6 @@ document.documentElement.classList.add('js-enabled');
 })();
 
 // ============================================
-// BOTÃO CONTATAR (WhatsApp) - Removido do header, agora está no footer e formulário
-// ============================================
-
-// ============================================
 // CARROSSEL DE PROJETOS
 // ============================================
 (function initProjectsCarousel() {
@@ -234,8 +230,8 @@ document.documentElement.classList.add('js-enabled');
     messageEl.setAttribute('aria-live', 'polite');
     form.appendChild(messageEl);
 
-    // Adicionar labels se não existirem
-    if (nameInput && !nameInput.previousElementSibling?.tagName === 'LABEL') {
+    // Adicionar labels se não existirem (checagem corrigida)
+    if (nameInput && !(nameInput.previousElementSibling && nameInput.previousElementSibling.tagName === 'LABEL')) {
         const nameLabel = document.createElement('label');
         nameLabel.textContent = 'Nome';
         nameLabel.setAttribute('for', 'contact-name');
@@ -243,7 +239,7 @@ document.documentElement.classList.add('js-enabled');
         nameInput.parentNode.insertBefore(nameLabel, nameInput);
     }
 
-    if (messageTextarea && !messageTextarea.previousElementSibling?.tagName === 'LABEL') {
+    if (messageTextarea && !(messageTextarea.previousElementSibling && messageTextarea.previousElementSibling.tagName === 'LABEL')) {
         const messageLabel = document.createElement('label');
         messageLabel.textContent = 'Mensagem';
         messageLabel.setAttribute('for', 'contact-message');
@@ -290,7 +286,7 @@ document.documentElement.classList.add('js-enabled');
         // Preparar mensagem para WhatsApp
         const name = nameInput.value.trim();
         const message = messageTextarea.value.trim();
-        const whatsappNumber = '+55SEUNUMEROAQUI';
+        const whatsappNumber = '5547989298761'; // número do rodapé
         const whatsappMessage = encodeURIComponent(`Olá Marcos! Meu nome é ${name}. ${message}`);
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
@@ -507,4 +503,3 @@ document.documentElement.classList.add('js-enabled');
     window.addEventListener('scroll', onScroll, { passive: true });
     setActiveLink(); // Definir estado inicial
 })();
-
