@@ -50,14 +50,86 @@ document.documentElement.classList.add('js-enabled');
     nextBtn.textContent = 'Próximo →';
     nextBtn.id = 'carousel-next';
 
+    // Criar indicadores de posição
+    const scrollIndicator = document.createElement('div');
+    scrollIndicator.className = 'projects-scroll-indicator';
+    scrollIndicator.setAttribute('role', 'tablist');
+    scrollIndicator.setAttribute('aria-label', 'Indicadores de posição do carrossel');
+
+    // Adicionar elementos ao DOM
     carouselControls.appendChild(prevBtn);
     carouselControls.appendChild(nextBtn);
     projectsContent.parentNode.insertBefore(carouselControls, projectsContent.nextSibling);
+    projectsContent.parentNode.insertBefore(scrollIndicator, carouselControls.nextSibling);
 
-    const cards = projectsContent.querySelectorAll('.projects-card');
+    const cards = Array.from(projectsContent.querySelectorAll('.projects-card'));
     if (cards.length === 0) return;
 
     let currentIndex = 0;
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
+    let touchStartX;
+    
+    // Inicializar indicadores de posição
+    function initScrollIndicators() {
+        scrollIndicator.innerHTML = '';
+        const visibleCount = getVisibleCardsCount();
+        const indicatorCount = Math.ceil(cards.length / visibleCount);
+        
+        for (let i = 0; i < indicatorCount; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'scroll-dot';
+            dot.setAttribute('role', 'tab');
+            dot.setAttribute('aria-label', `Ir para o grupo de projetos ${i + 1}`);
+            dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+            dot.setAttribute('data-index', i);
+            
+            dot.addEventListener('click', () => {
+                scrollToIndex(i);
+            });
+            
+            scrollIndicator.appendChild(dot);
+        }
+        
+        updateIndicators();
+    }
+    
+    // Atualizar indicadores ativos
+    function updateIndicators() {
+        const dots = scrollIndicator.querySelectorAll('.scroll-dot');
+        const visibleCount = getVisibleCardsCount();
+        const currentIndicator = Math.floor(currentIndex / visibleCount);
+        
+        dots.forEach((dot, index) => {
+            const isSelected = index === currentIndicator;
+            dot.setAttribute('aria-selected', isSelected);
+            dot.classList.toggle('active', isSelected);
+        });
+    }
+    
+    // Rolar para um índice específico
+    function scrollToIndex(index) {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const visibleCount = getVisibleCardsCount();
+        const firstCard = cards[0];
+        if (!firstCard) return;
+        
+        const cardWidth = firstCard.offsetWidth;
+        const gap = parseInt(window.getComputedStyle(projectsContent).gap) || 24;
+        const cardWithGap = cardWidth + gap;
+        
+        currentIndex = Math.min(Math.max(0, index * visibleCount), cards.length - 1);
+        const scrollPosition = currentIndex * cardWithGap;
+        
+        projectsContent.scrollTo({
+            left: scrollPosition,
+            behavior: prefersReducedMotion ? 'auto' : 'smooth'
+        });
+        
+        updateButtons();
+        updateIndicators();
+    }
     
     // Calcular quantos cards são visíveis por vez
     function getVisibleCardsCount() {
@@ -66,9 +138,9 @@ document.documentElement.classList.add('js-enabled');
         if (!firstCard) return 3;
         
         const cardWidth = firstCard.offsetWidth;
-        const gap = parseInt(window.getComputedStyle(projectsContent).gap) || 32;
-        const cardsPerView = Math.floor(containerWidth / (cardWidth + gap));
-        return Math.max(1, Math.min(cardsPerView, 3)); // Máximo 3, mínimo 1
+        const gap = parseInt(window.getComputedStyle(projectsContent).gap) || 24;
+        const cardsPerView = Math.max(1, Math.floor((containerWidth + gap) / (cardWidth + gap)));
+        return Math.min(cardsPerView, 3); // Máximo 3 cards por view
     }
 
     // Função para atualizar visibilidade dos botões
@@ -81,117 +153,160 @@ document.documentElement.classList.add('js-enabled');
 
     // Função para rolar para o próximo grupo de cards
     function scrollToGroup(direction) {
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const visibleCount = getVisibleCardsCount();
-        const firstCard = cards[0];
-        if (!firstCard) return;
-        
-        const cardWidth = firstCard.offsetWidth;
-        const gap = parseInt(window.getComputedStyle(projectsContent).gap) || 32;
-        const cardWithGap = cardWidth + gap;
         
         if (direction === 'next') {
-            currentIndex = Math.min(currentIndex + visibleCount, Math.max(0, cards.length - visibleCount));
+            scrollToIndex(Math.floor(currentIndex / visibleCount) + 1);
         } else {
-            currentIndex = Math.max(0, currentIndex - visibleCount);
+            scrollToIndex(Math.max(0, Math.floor(currentIndex / visibleCount) - 1));
         }
-        
-        const scrollPosition = currentIndex * cardWithGap;
-        
-        projectsContent.scrollTo({
-            left: scrollPosition,
-            behavior: prefersReducedMotion ? 'auto' : 'smooth'
-        });
-        
-        updateButtons();
     }
 
     // Event listeners dos botões
-    prevBtn.addEventListener('click', () => {
-        scrollToGroup('prev');
-    });
+    prevBtn.addEventListener('click', () => scrollToGroup('prev'));
+    nextBtn.addEventListener('click', () => scrollToGroup('next'));
 
-    nextBtn.addEventListener('click', () => {
-        scrollToGroup('next');
-    });
-
-    // Suporte a arrastar (touch)
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    projectsContent.addEventListener('mousedown', (e) => {
-        isDown = true;
+    // Mouse events para arrastar
+    function handleMouseDown(e) {
+        isDragging = true;
         projectsContent.style.cursor = 'grabbing';
         startX = e.pageX - projectsContent.offsetLeft;
         scrollLeft = projectsContent.scrollLeft;
-    });
-
-    projectsContent.addEventListener('mouseleave', () => {
-        isDown = false;
+        projectsContent.style.scrollSnapType = 'none';
+    }
+    
+    function handleMouseLeave() {
+        isDragging = false;
         projectsContent.style.cursor = 'grab';
-    });
-
-    projectsContent.addEventListener('mouseup', () => {
-        isDown = false;
+        projectsContent.style.scrollSnapType = 'x mandatory';
+        snapToNearestCard();
+    }
+    
+    function handleMouseUp() {
+        isDragging = false;
         projectsContent.style.cursor = 'grab';
-    });
-
-    projectsContent.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
+        projectsContent.style.scrollSnapType = 'x mandatory';
+        snapToNearestCard();
+    }
+    
+    function handleMouseMove(e) {
+        if (!isDragging) return;
         e.preventDefault();
         const x = e.pageX - projectsContent.offsetLeft;
-        const walk = (x - startX) * 2;
+        const walk = (x - startX) * 1.5; // Ajuste da sensibilidade do arraste
         projectsContent.scrollLeft = scrollLeft - walk;
-    });
-
+    }
+    
     // Touch events
-    projectsContent.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].pageX - projectsContent.offsetLeft;
-        scrollLeft = projectsContent.scrollLeft;
-    });
-
-    projectsContent.addEventListener('touchmove', (e) => {
-        e.preventDefault();
-        const x = e.touches[0].pageX - projectsContent.offsetLeft;
-        const walk = (x - startX) * 2;
-        projectsContent.scrollLeft = scrollLeft - walk;
-    });
-
-    // Atualizar índice baseado no scroll
-    projectsContent.addEventListener('scroll', () => {
-        const scrollPosition = projectsContent.scrollLeft;
-        const visibleCount = getVisibleCardsCount();
+    function handleTouchStart(e) {
+        touchStartX = e.touches[0].clientX;
+        projectsContent.style.scrollSnapType = 'none';
+    }
+    
+    function handleTouchMove(e) {
+        if (!touchStartX) return;
+        
+        const touchX = e.touches[0].clientX;
+        const diff = touchStartX - touchX;
+        
+        // Evitar rolagem vertical durante o arraste horizontal
+        if (Math.abs(diff) > 5) {
+            e.preventDefault();
+        }
+        
+        projectsContent.scrollLeft += diff;
+        touchStartX = touchX;
+    }
+    
+    function handleTouchEnd() {
+        touchStartX = null;
+        projectsContent.style.scrollSnapType = 'x mandatory';
+        snapToNearestCard();
+    }
+    
+    // Ajustar o scroll para o card mais próximo
+    function snapToNearestCard() {
         const firstCard = cards[0];
         if (!firstCard) return;
         
         const cardWidth = firstCard.offsetWidth;
-        const gap = parseInt(window.getComputedStyle(projectsContent).gap) || 32;
+        const gap = parseInt(window.getComputedStyle(projectsContent).gap) || 24;
         const cardWithGap = cardWidth + gap;
+        
+        const scrollPosition = projectsContent.scrollLeft;
+        currentIndex = Math.round(scrollPosition / cardWithGap);
+        
+        // Garantir que o índice esteja dentro dos limites
+        currentIndex = Math.max(0, Math.min(currentIndex, cards.length - 1));
+        
+        const snapPosition = currentIndex * cardWithGap;
+        
+        projectsContent.scrollTo({
+            left: snapPosition,
+            behavior: 'smooth'
+        });
+        
+        updateButtons();
+        updateIndicators();
+    }
+    
+    // Atualizar índice baseado no scroll
+    function handleScroll() {
+        if (isDragging) return;
+        
+        const scrollPosition = projectsContent.scrollLeft;
+        const firstCard = cards[0];
+        if (!firstCard) return;
+        
+        const cardWidth = firstCard.offsetWidth;
+        const gap = parseInt(window.getComputedStyle(projectsContent).gap) || 24;
+        const cardWithGap = cardWidth + gap;
+        
+        // Usar Math.round para determinar o card mais próximo
         const newIndex = Math.round(scrollPosition / cardWithGap);
         
         if (newIndex !== currentIndex && newIndex >= 0 && newIndex < cards.length) {
             currentIndex = newIndex;
             updateButtons();
+            updateIndicators();
         }
-    });
-
-    // Inicializar botões
-    updateButtons();
-
+    }
+    
+    // Adicionar event listeners
+    projectsContent.addEventListener('mousedown', handleMouseDown);
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+    projectsContent.addEventListener('mouseleave', handleMouseLeave);
+    
+    // Touch events
+    projectsContent.addEventListener('touchstart', handleTouchStart, { passive: true });
+    projectsContent.addEventListener('touchmove', handleTouchMove, { passive: false });
+    projectsContent.addEventListener('touchend', handleTouchEnd, { passive: true });
+    projectsContent.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Inicializar
+    function init() {
+        initScrollIndicators();
+        updateButtons();
+        handleResize();
+    }
+    
     // Ocultar botões em telas muito pequenas (carrossel funciona por scroll)
     function handleResize() {
-        if (window.innerWidth <= 480) {
-            carouselControls.style.display = 'none';
-        } else {
-            carouselControls.style.display = 'flex';
-        }
-        // Atualizar botões após resize
+        const isMobile = window.innerWidth <= 768;
+        carouselControls.style.display = isMobile ? 'none' : 'flex';
+        
+        // Recalcular indicadores em caso de redimensionamento
+        initScrollIndicators();
         updateButtons();
     }
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
+    
+    // Inicializar e adicionar listener de redimensionamento
+    init();
+    window.addEventListener('resize', () => {
+        clearTimeout(window.resizingTimer);
+        window.resizingTimer = setTimeout(handleResize, 250);
+    });
 })();
 
 // ============================================
