@@ -168,213 +168,246 @@
             </div>
         </section>
 
-        <!-- Projects -->
-        <section id="projects" class="projects fade-in-section" aria-labelledby="projects-title">
-            <h2 id="projects-title" class="projects-title">Meus Projetos</h2>
+        <!-- Projects - Seção otimizada com a nova ordem e correção de IDs -->
+<section id="projects" class="projects fade-in-section" aria-labelledby="projects-title">
+    <h2 id="projects-title" class="projects-title">Meus Projetos</h2>
 
-            <div class="projects-content" role="region" aria-label="Carrossel de projetos">
-                <!-- 1: iPhone 17 Pro (agora em primeiro) -->
-                <article class="projects-card" role="article" aria-labelledby="project-4">
-                    <img src="src/assets/projects/iphone-17.png" 
-                         alt="Landing iPhone 17 Pro — interface moderna, componentização e animações leves (React + Tailwind)" 
-                         class="projects-img"
-                         loading="lazy"
-                         width="400"
-                         height="200">
-                    <div class="projects-card-content">
-                        <h3 id="project-4" class="title-img">
-                            <a href="https://dev-marcosbrito.github.io/site-iPhone17/" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               aria-label="Abrir projeto iPhone 17 Pro — Landing em React e Tailwind">
-                                iPhone 17 Pro
-                            </a>
-                        </h3>
-                    </div>
-                </article>
+    <!-- Removidos role="region" e aria-label="Carrossel de projetos" para grids estáticos -->
+    <div class="projects-content">
 
-                <!-- 2: Apple Store -->
-                <article class="projects-card" role="article" aria-labelledby="project-2">
-                    <img src="src/assets/projects/apple-store.png" 
-                         alt="Apple Store — landing responsiva com tema claro/escuro e carrossel interativo" 
-                         class="projects-img"
-                         loading="lazy"
-                         width="400"
-                         height="200">
-                    <div class="projects-card-content">
-                        <h3 id="project-2" class="title-img">
-                            <a href="https://dev-marcosbrito.github.io/Apple-Store/" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               aria-label="Abrir projeto Apple Store — Landing responsiva com carrossel">
-                                Apple Store
-                            </a>
-                        </h3>
-                    </div>
-                </article>
-
-                <!-- 3: Starbucks -->
-                <article class="projects-card" role="article" aria-labelledby="project-6">
-                    <img src="src/assets/projects/starbucks.png" 
-                         alt="Starbucks — landing responsiva, menu interativo e conceito mobile-first" 
-                         class="projects-img"
-                         loading="lazy"
-                         width="400"
-                         height="200">
-                    <div class="projects-card-content">
-                        <h3 id="project-6" class="title-img">
-                            <a href="https://dev-marcosbrito.github.io/Starbucks/" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               aria-label="Abrir projeto Starbucks — Landing responsiva com menu interativo">
-                                Starbucks
-                            </a>
-                        </h3>
-                    </div>
-                </article>
-
-                <!-- 4: Coca-Cola -->
-                <article class="projects-card" role="article" aria-labelledby="project-3">
-                    <img src="src/assets/projects/coca-cola.png" 
-                         alt="Coca-Cola — landing animada com GSAP e ScrollTrigger para experiência imersiva" 
-                         class="projects-img"
-                         loading="lazy"
-                         width="400"
-                         height="200">
-                    <div class="projects-card-content">
-                        <h3 id="project-3" class="title-img">
-                            <a href="https://dev-marcosbrito.github.io/coca-cola/" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               aria-label="Abrir projeto Coca-Cola — Landing com animações GSAP">
-                                Coca-Cola
-                            </a>
-                        </h3>
-                    </div>
-                </article>
-
-                <!-- 5: The Coffee House -->
-                <article class="projects-card" role="article" aria-labelledby="project-7">
-                    <img src="src/assets/projects/the-coffe-house.png" 
-                         alt="The Coffee House — landing imersiva com vídeo de fundo e suporte multilíngue" 
-                         class="projects-img"
-                         loading="lazy"
-                         width="400"
-                         height="200">
-                    <div class="projects-card-content">
-                        <h3 id="project-7" class="title-img">
-                            <a href="https://dev-marcosbrito.github.io/The-Coffee-House/" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               aria-label="Abrir projeto The Coffee House — Landing com vídeo de fundo">
-                                The Coffee House
-                            </a>
-                        </h3>
-                    </div>
-                </article>
-
-                <!-- 6: La Bella Vita -->
-                <article class="projects-card" role="article" aria-labelledby="project-5">
-                    <img src="src/assets/projects/la-bella-vita.png" 
-                         alt="La Bella Vita — site gastronômico com identidade visual e conteúdo gerado por IA" 
-                         class="projects-img"
-                         loading="lazy"
-                         width="400"
-                         height="200">
-                    <div class="projects-card-content">
-                        <h3 id="project-5" class="title-img">
-                            <a href="https://dev-marcosbrito.github.io/la-bella-vita/" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               aria-label="Abrir projeto La Bella Vita — Site gastronômico">
-                                La Bella Vita
-                            </a>
-                        </h3>
-                    </div>
-                </article>
-
-                <!-- 7: AdvocaIA -->
-                <article class="projects-card" role="article" aria-labelledby="project-1">
-                    <img src="src/assets/projects/advocaIA.png" 
-                         alt="AdvocaIA — demonstração de integração entre IA generativa e conteúdos para site" 
-                         class="projects-img"
-                         loading="lazy"
-                         width="400"
-                         height="200">
-                    <div class="projects-card-content">
-                        <h3 id="project-1" class="title-img">
-                            <a href="https://dev-marcosbrito.github.io/advocaia-site/" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               aria-label="Abrir projeto AdvocaIA — Integração com IA generativa">
-                                AdvocaIA
-                            </a>
-                        </h3>
-                    </div>
-                </article>
-
-                <!-- 8: Sabor do Xingu -->
-                <article class="projects-card" role="article" aria-labelledby="project-1">
-                    <img src="src/assets/projects/sabor-do-xingu.png" 
-                         alt="Sabor do Xingu — site para restaurante fictício com design moderno e funcionalidades interativas" 
-                         class="projects-img"
-                         loading="lazy"
-                         width="400"
-                         height="200">
-                    <div class="projects-card-content">
-                        <h3 id="project-1" class="title-img">
-                            <a href="https://sabor-do-xingu-digital.lovable.app/" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               aria-label="Abrir projeto Sabor do Xingu — Integração com IA generativa">
-                                Sabor do Xingu
-                            </a>
-                        </h3>
-                    </div>
-                </article>
-
-                <!-- 9: Lumin - Ótica e Joalheria -->
-                <article class="projects-card" role="article" aria-labelledby="project-1">
-                    <img src="src/assets/projects/lumin.png" 
-                         alt="Lumin - Ótica e Joalheria — site para ótica e joalheria com design moderno e funcionalidades interativas" 
-                         class="projects-img"
-                         loading="lazy"
-                         width="400"
-                         height="200">
-                    <div class="projects-card-content">
-                        <h3 id="project-1" class="title-img">
-                            <a href="https://lumin-vision-style.lovable.app/" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               aria-label="Abrir projeto Lumin - Ótica e Joalheria — Site para ótica e joalheria com design moderno e funcionalidades interativas">
-                                Lumin - Ótica e Joalheria
-                            </a>
-                        </h3>
-                    </div>
-                </article>
-
-                <!-- 10: Cinematic Vision -->
-                <article class="projects-card" role="article" aria-labelledby="project-1">
-                    <img src="src/assets/projects/cinematic-vision.png" 
-                         alt="Cinematic Vision — site para cinema com design moderno e funcionalidades interativas" 
-                         class="projects-img"
-                         loading="lazy"
-                         width="400"
-                         height="200">
-                    <div class="projects-card-content">
-                        <h3 id="project-1" class="title-img">
-                            <a href="https://cinematic-vision-22.lovable.app/" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               aria-label="Abrir projeto Cinematic Vision — Site para cinema com design moderno e funcionalidades interativas">
-                                Cinematic Vision
-                            </a>
-                        </h3>
-                    </div>
-                </article>
-                
+        <!-- 1: iPhone 17 Pro (React + Tailwind + Animações) - ID Corrigido -->
+        <article class="projects-card" role="article" aria-labelledby="project-iphone17">
+            <img src="src/assets/projects/iphone-17.png" 
+                 alt="Landing iPhone 17 Pro — interface moderna, componentização e animações leves (React + Tailwind)" 
+                 class="projects-img"
+                 loading="lazy"
+                 decoding="async"
+                 width="400"
+                 height="200">
+            <div class="projects-card-content">
+                <h3 id="project-iphone17" class="title-img">
+                    <a href="https://dev-marcosbrito.github.io/site-iPhone17/" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Abrir projeto iPhone 17 Pro — Landing em React e Tailwind">
+                        iPhone 17 Pro
+                    </a>
+                </h3>
             </div>
-        </section>
+        </article>
+
+        <!-- 2: Coca-Cola (GSAP + ScrollTrigger) - ID Corrigido -->
+        <article class="projects-card" role="article" aria-labelledby="project-coca-cola">
+            <img src="src/assets/projects/coca-cola.png" 
+                 alt="Coca-Cola — landing animada com GSAP e ScrollTrigger para experiência imersiva" 
+                 class="projects-img"
+                 loading="lazy"
+                 decoding="async"
+                 width="400"
+                 height="200">
+            <div class="projects-card-content">
+                <h3 id="project-coca-cola" class="title-img">
+                    <a href="https://dev-marcosbrito.github.io/coca-cola/" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Abrir projeto Coca-Cola — Landing com animações GSAP">
+                        Coca-Cola
+                    </a>
+                </h3>
+            </div>
+        </article>
+
+        <!-- 3: AdvocaIA (Integração com IA generativa) - ID Corrigido -->
+        <article class="projects-card" role="article" aria-labelledby="project-advocaia">
+            <img src="src/assets/projects/advocaIA.png" 
+                 alt="AdvocaIA — demonstração de integração entre IA generativa e conteúdos para site" 
+                 class="projects-img"
+                 loading="lazy"
+                 decoding="async"
+                 width="400"
+                 height="200">
+            <div class="projects-card-content">
+                <h3 id="project-advocaia" class="title-img">
+                    <a href="https://dev-marcosbrito.github.io/advocaia-site/" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Abrir projeto AdvocaIA — Integração com IA generativa">
+                        AdvocaIA
+                    </a>
+                </h3>
+            </div>
+        </article>
+
+        <!-- 4: Apple Store (Dark/Light + Carrossel) - ID Corrigido -->
+        <article class="projects-card" role="article" aria-labelledby="project-apple-store">
+            <img src="src/assets/projects/apple-store.png" 
+                 alt="Apple Store — landing responsiva com tema claro/escuro e carrossel interativo" 
+                 class="projects-img"
+                 loading="lazy"
+                 decoding="async"
+                 width="400"
+                 height="200">
+            <div class="projects-card-content">
+                <h3 id="project-apple-store" class="title-img">
+                    <a href="https://dev-marcosbrito.github.io/Apple-Store/" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Abrir projeto Apple Store — Landing responsiva com carrossel">
+                        Apple Store
+                    </a>
+                </h3>
+            </div>
+        </article>
+
+        <!-- 5: Starbucks (Mobile-first + Interativo) - ID Corrigido -->
+        <article class="projects-card" role="article" aria-labelledby="project-starbucks">
+            <img src="src/assets/projects/starbucks.png" 
+                 alt="Starbucks — landing responsiva, menu interativo e conceito mobile-first" 
+                 class="projects-img"
+                 loading="lazy"
+                 decoding="async"
+                 width="400"
+                 height="200">
+            <div class="projects-card-content">
+                <h3 id="project-starbucks" class="title-img">
+                    <a href="https://dev-marcosbrito.github.io/Starbucks/" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Abrir projeto Starbucks — Landing responsiva com menu interativo">
+                        Starbucks
+                    </a>
+                </h3>
+            </div>
+        </article>
+
+        <!-- 6: The Coffee House (Vídeo de Fundo + Multilíngue) - ID Corrigido -->
+        <article class="projects-card" role="article" aria-labelledby="project-coffee-house">
+            <img src="src/assets/projects/the-coffe-house.png" 
+                 alt="The Coffee House — landing imersiva com vídeo de fundo e suporte multilíngue" 
+                 class="projects-img"
+                 loading="lazy"
+                 decoding="async"
+                 width="400"
+                 height="200">
+            <div class="projects-card-content">
+                <h3 id="project-coffee-house" class="title-img">
+                    <a href="https://dev-marcosbrito.github.io/The-Coffee-House/" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Abrir projeto The Coffee House — Landing com vídeo de fundo">
+                        The Coffee House
+                    </a>
+                </h3>
+            </div>
+        </article>
+
+        <!-- 7: La Bella Vita (Conteúdo gerado por IA + Gastronomia) - ID Corrigido -->
+        <article class="projects-card" role="article" aria-labelledby="project-bella-vita">
+            <img src="src/assets/projects/la-bella-vita.png" 
+                 alt="La Bella Vita — site gastronômico com identidade visual e conteúdo gerado por IA" 
+                 class="projects-img"
+                 loading="lazy"
+                 decoding="async"
+                 width="400"
+                 height="200">
+            <div class="projects-card-content">
+                <h3 id="project-bella-vita" class="title-img">
+                    <a href="https://dev-marcosbrito.github.io/la-bella-vita/" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Abrir projeto La Bella Vita — Site gastronômico">
+                        La Bella Vita
+                    </a>
+                </h3>
+            </div>
+        </article>
+
+        <!-- 8: Sabor do Xingu - ID Corrigido -->
+        <article class="projects-card" role="article" aria-labelledby="project-xingu">
+            <img src="src/assets/projects/sabor-do-xingu.png" 
+                 alt="Sabor do Xingu — site para restaurante fictício com design moderno e funcionalidades interativas" 
+                 class="projects-img"
+                 loading="lazy"
+                 decoding="async"
+                 width="400"
+                 height="200">
+            <div class="projects-card-content">
+                <h3 id="project-xingu" class="title-img">
+                    <a href="https://sabor-do-xingu-digital.lovable.app/" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Abrir projeto Sabor do Xingu — Integração com IA generativa">
+                        Sabor do Xingu
+                    </a>
+                </h3>
+            </div>
+        </article>
+
+        <!-- 9: Lumin - Ótica e Joalheria - ID Corrigido -->
+        <article class="projects-card" role="article" aria-labelledby="project-lumin">
+            <img src="src/assets/projects/lumin.png" 
+                 alt="Lumin - Ótica e Joalheria — site para ótica e joalheria com design moderno e funcionalidades interativas" 
+                 class="projects-img"
+                 loading="lazy"
+                 decoding="async"
+                 width="400"
+                 height="200">
+            <div class="projects-card-content">
+                <h3 id="project-lumin" class="title-img">
+                    <a href="https://lumin-vision-style.lovable.app/" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Abrir projeto Lumin - Ótica e Joalheria — Site para ótica e joalheria com design moderno e funcionalidades interativas">
+                        Lumin - Ótica e Joalheria
+                    </a>
+                </h3>
+            </div>
+        </article>
+
+        <!-- 10: Cinematic Vision - ID Corrigido -->
+        <article class="projects-card" role="article" aria-labelledby="project-cinematic">
+            <img src="src/assets/projects/cinematic-vision.png" 
+                 alt="Cinematic Vision — site para cinema com design moderno e funcionalidades interativas" 
+                 class="projects-img"
+                 loading="lazy"
+                 decoding="async"
+                 width="400"
+                 height="200">
+            <div class="projects-card-content">
+                <h3 id="project-cinematic" class="title-img">
+                    <a href="https://cinematic-vision-22.lovable.app/" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Abrir projeto Cinematic Vision — Site para cinema com design moderno e funcionalidades interativas">
+                        Cinematic Vision
+                    </a>
+                </h3>
+            </div>
+        </article>
+
+        <!-- 11: Psicologia & Bem-Estar - ID Corrigido -->
+        <article class="projects-card" role="article" aria-labelledby="project-psico">
+            <img src="src/assets/projects/psico.png" 
+                 alt="Psicologia & Bem-Estar — site Institucional para psicologia e bem-estar com design moderno e funcionalidades interativas" 
+                 class="projects-img"
+                 loading="lazy"
+                 decoding="async"
+                 width="400"
+                 height="200">
+            <div class="projects-card-content">
+                <h3 id="project-psico" class="title-img">
+                    <a href="https://humanistic-care-hub.lovable.app" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Abrir projeto Psicologia & Bem-Estar">
+                        Psicologia & Bem-Estar
+                    </a>
+                </h3>
+            </div>
+        </article>
+        
+    </div>
+</section>
 
         <!-- Contact -->
         <section id="contact" class="fade-in-section" aria-labelledby="contact-title">
